@@ -1,0 +1,32 @@
+class Nodo{   
+    constructor(data,left=null,right=null){         
+        this.data=data         
+        this.left=left
+        this.right=right     
+    } 
+}
+let array = []
+let  a=0, b=0;
+
+function agregar(dato){
+    
+    node=new Nodo(dato)
+
+        a++
+        if(a==1){
+            b++
+            (array[a].left)=(node)
+            array[a]=(node)
+        }
+        if(b==2){
+            (array[b].right)=(node)
+            a++
+            array[b]=(node)
+        }
+    }
+  
+agregar(50)
+agregar(11)
+agregar(31)
+agregar(2)
+console.log(array);
