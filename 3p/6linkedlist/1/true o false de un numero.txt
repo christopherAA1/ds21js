@@ -1,0 +1,55 @@
+//true o false de un numero
+class Lista{     
+    constructor(){         
+        this.h=null         
+        this.s=0 
+        this.t=null    
+    } 
+    AddFirst(data){
+        let node=new  Node(data, null)   
+        node.next = this.h 
+        this.h=node
+        if(this.t==null){
+            this.t=node
+        }
+        this.s++     
+    }
+     AddEnd(data){
+        let node=new Node(data,null)
+        if(this.h==null){
+            this.AddFirst(data)
+        }else{
+            this.t.next=node
+            this.t=node
+            var c=this.h
+        }
+        this.s++
+    } 
+    PrintList(){         
+        var c=this.h 
+
+        while(c){         
+            console.log(c.data)         
+            c=c.next         
+        }     
+    }     
+    Contains(y){
+        var c=this.h 
+        var contains=false
+
+        while(c){
+            if(c.data==y){
+                contains=true
+            }                    
+                 
+        } 
+        console.log(contains)
+    }
+}
+let p = new Lista
+
+for(i=0; i<=100; i++){
+    p.AddEnd((Math.random()*100).toFixed(0));
+}
+ p.Contains(22)
+ p.PrintList()
